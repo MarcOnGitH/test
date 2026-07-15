@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Puller",
-  description: "Pull real-time market data",
+  description: "Pull real-time market data with company insights",
 };
 
 export default function RootLayout({
