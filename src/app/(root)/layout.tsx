@@ -2,7 +2,6 @@ import Header from "@/components/header";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
     return (
-        // Changed container wrap to a premium dark-grey background (#121212)
         <div className="min-h-screen bg-[#1C1C1C]">
             <Header />
             <main className="text-zinc-300">

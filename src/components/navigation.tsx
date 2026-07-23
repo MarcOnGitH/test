@@ -1,25 +1,38 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const navLinks = [
+    { name: "Dashboard", href: "/" },
+    { name: "Search", href: "/search" },
+    { name: "WatchList", href: "/watchlist" },
+    { name: "News", href: "/news" },
+];
 
 export default function Navigation() {
-    const navLinks = [
-        { name: "Search", href: "/search" },
-        { name: "WatchList", href: "/watchlist" },
-        { name: "News", href: "/news" },
-        { name: "Dashboard", href: "/dashboard" },
-    ];
+    const pathName = usePathname();
 
     return (
-        <nav className="flex justify-center gap-8">
-            {navLinks.map((link) => (
-                <Link
-                    key={link.name}
-                    href={link.href}
-                    // Cleaned up the broken hover property and completely stripped the white drop-shadow glow
-                    className="text-[15px] font-medium tracking-wide text-zinc-400 hover:text-white transition-colors duration-200"
-                >
-                    {link.name}
-                </Link>
-            ))}
+        <nav>
+            <ul className="flex items-center justify-center gap-9">
+                {navLinks.map((link) => {
+                    const active = link.href === "/"
+                        ? pathName === "/"
+                        : pathName.startsWith(link.href);
+
+                    return (
+                        <li key={link.name}>
+                            <Link href={link.href}
+                                className={`text-[15px] tracking-wide transition-colors duration-200 ${active
+                                    ? "font-semibold text-white"
+                                    : "font-medium text-zinc-400 hover:text-white"}`}>
+                                {link.name}
+                            </Link>
+                        </li>
+                    );
+                })}
+            </ul>
         </nav>
     );
 }
