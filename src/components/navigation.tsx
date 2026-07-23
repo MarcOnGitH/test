@@ -22,13 +22,15 @@ export default function Navigation() {
                         : pathName.startsWith(link.href);
 
                     return (
-                        <li key={link.name}>
+                        <li key={link.name} className="relative py-1">
                             <Link href={link.href}
                                 className={`text-[15px] tracking-wide transition-colors duration-200 ${active
                                     ? "font-semibold text-white"
                                     : "font-medium text-zinc-400 hover:text-white"}`}>
                                 {link.name}
                             </Link>
+
+                            {active && (<span className="absolute bottom-0 left-0 h-0.5 w-full rounded-full bg-pink-600 shadow-[0_0_8px_rgba(250,0,0,1)]" />)}
                         </li>
                     );
                 })}
