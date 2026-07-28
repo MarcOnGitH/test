@@ -1,10 +1,20 @@
-import { Button } from '@base-ui/react';
+import TradingViewWidget from "@/components/TradingViewWidgets";
 
-const Main = () => {
+export default function Home() {
   return (
-    <div className="flex min-h-screen home-wrapper">
-    </div>
+    <main className="min-h-[calc(100vh-80px)] w-full max-w-7xl mx-auto px-6 py-8 space-y-6">
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight text-white">
+            Market Overview
+          </h1>
+          <p className="text-sm text-zinc-400">
+            Real-time stock analytics and trends
+          </p>
+        </div>
+      </div>
+
+      <TradingViewWidget />
+    </main>
   );
 }
-
-export default Main;
