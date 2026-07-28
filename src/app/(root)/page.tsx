@@ -9,7 +9,7 @@ export default function Home() {
             Market Overview
           </h1>
           <p className="text-sm text-zinc-400">
-            Real-time stock analytics and trends
+            Real-time stock market data
           </p>
         </div>
       </div>
