@@ -3,6 +3,9 @@ import { useEffect } from "react";
 
 const AdvancedWidget = () => {
     useEffect(() => {
+        const container = document.getElementById("tv-advanced-container");
+        if (!container) return;
+
         const script = document.createElement("script");
         script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
         script.type = "text/javascript";
@@ -10,7 +13,7 @@ const AdvancedWidget = () => {
 
         script.innerHTML = JSON.stringify({
             autosize: true,
-            symbol: "NASDAQ:NDX",
+            symbol: "NASDAQ:AAPL",
             interval: "D",
             timezone: "Etc/UTC",
             theme: "dark",
@@ -24,17 +27,15 @@ const AdvancedWidget = () => {
             allow_symbol_change: true,
         });
 
-        const container = document.getElementById("tv-advanced-container");
-
-        if (container) {
-            container.appendChild(script);
-        }
-
-    }, [])
+        container.appendChild(script);
+        return () => {
+            container.innerHTML = "";
+        };
+    }, []);
 
     return (
-        <div id="tv-advanced-container" className="tradingview-widget-container w-full h-137.5">
-            <div className="tradingview-widget-container__widget"></div>
+        <div id="tv-advanced-container" className="w-full h-150">
+            <div className="tradingview-widget-container__widget w-full h-full"></div>
         </div>
     );
 };

@@ -35,7 +35,7 @@ const SimpleWidget = () => {
             lineWidth: 1.5,
             lineType: 0,
             lineColor: "rgba(200, 20, 100, 1)",
-            dateRanges: ["1d|1", "1m|30", "3m|60", "12m|1D", "60m|1W", "all|1M"],
+            dateRanges: ["1d|1", "5d|5", "1m|30", "3m|60", "12m|1D", "60m|1W", "all|1M"],
         });
 
         const container = document.getElementById("tv-simple-container");
