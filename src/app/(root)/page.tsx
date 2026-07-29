@@ -1,10 +1,9 @@
-import { Button } from '@base-ui/react';
+import TradingViewWidget from "@/components/TradingViewWidgets";
 
-const Main = () => {
+export default function Home() {
   return (
-    <div className="flex min-h-screen home-wrapper">
-    </div>
+    <main className="min-h-[calc(100vh-80px)] w-full max-w-7xl mx-auto px-6 py-8 space-y-6">
+      <TradingViewWidget />
+    </main>
   );
 }
-
-export default Main;
