@@ -28,8 +28,14 @@ export default function LoginPage() {
 
           <form className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" placeholder="exampleaddress@gmail.com" value={email} required />
+              <Label htmlFor="email" className="text-zinc-300">Email</Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="exampleaddress@gmail.com"
+                value={email}
+                required
+                className="border-zinc-700 text-white focus-visible:ring-pink-500 focus-visible:ring-1 focus-visible:ring-offset-0" />
             </div>
 
           </form>
