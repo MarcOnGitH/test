@@ -42,7 +42,7 @@ export default function LoginPage() {
                 className="h-26 w-auto object-contain" />
             </div>
 
-            <h1 className="text-3xl font-bold tracking-tighter text-white">Welcome back</h1>
+            <h1 className="text-3xl font-bold tracking-tighter text-white">Welcome!</h1>
             <p className="text-zinc-400">Enter your account details below, or Sign Up</p>
           </div>
 
