@@ -7,20 +7,19 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import Image from "next/image";
-import { Eye, EyeOff, Mail } from "lucide-react";
 import Link from "next/link";
+import { PasswordInput } from "@/components/PasswordInput";
 
-export default function LoginPage() {
+export default function SignupPage() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("user: ", { email, username, password });
-    // send to backend
-  };
+
+    console.log("user:", { email, username, password });
+  }
 
   return (
     <div className="min-h-screen bg-linear-to-br from-primary-50 to-primary-100 flex items-center justify-center">
@@ -74,15 +73,7 @@ export default function LoginPage() {
 
             <div className="space-y-2">
               <Label htmlFor="password" className="text-zinc-300">Password</Label>
-              <div>
-                <Input
-                  id="password"
-                  value={password}
-                  required
-                  className="border-zinc-700 text-white  transition-colors duration-700 hover:border-[#d7689a] focus-visible:border-[#c81464] focus-visible:ring-pink-500 focus-visible:ring-1 focus-visible:ring-offset-0"
-                  onChange={(e) => setPassword(e.target.value)}
-                  autoComplete="current-password" />
-              </div>
+              <PasswordInput id="password" value={password} autoComplete="new-password" onChange={e => setPassword(e.target.value)} />
             </div>
 
             <div className="flex items-center justify-between">

@@ -8,10 +8,17 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import Image from "next/image";
 import Link from "next/link";
+import { PasswordInput } from "@/components/PasswordInput";
 
 export default function LoginPage() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        console.log("user:", { username, password });
+    }
 
     return (
         <div className="min-h-screen bg-linear-to-br from-primary-50 to-primary-100 flex items-center justify-center">
@@ -38,7 +45,7 @@ export default function LoginPage() {
                         <p className="text-zinc-400">Enter your account details below to Login</p>
                     </div>
 
-                    <form className="space-y-4">
+                    <form onSubmit={handleSubmit} className="space-y-4">
 
                         <div className="space-y-2">
                             <Label htmlFor="username" className="text-zinc-300">Username</Label>
@@ -56,17 +63,7 @@ export default function LoginPage() {
 
                         <div className="space-y-2">
                             <Label htmlFor="password" className="text-zinc-300">Password</Label>
-                            <div>
-                                <Input
-                                    id="password"
-                                    type="password"
-                                    value={password}
-                                    required
-                                    className="border-zinc-700 text-white transition-colors duration-700 hover:border-[#d7689a] focus-visible:border-[#c81464] focus-visible:ring-pink-500 focus-visible:ring-1 focus-visible:ring-offset-0"
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    autoComplete="current-password"
-                                />
-                            </div>
+                            <PasswordInput id="password" value={password} onChange={e => setPassword(e.target.value)} autoComplete="current-password" />
                         </div>
 
                         <div className="flex items-center justify-between">
@@ -84,7 +81,7 @@ export default function LoginPage() {
                             Login
                         </Button>
 
-                        <Link href="/login" className="pl-1.5 text-sm text-pink-500 hover:text-pink-400">
+                        <Link href="/signup" className="pl-1.5 text-sm text-pink-500 hover:text-pink-400">
                             Signup instead?
                         </Link>
 
