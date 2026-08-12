@@ -27,7 +27,7 @@ export default function Header() {
                 {/* RR */}
                 <div className="flex justify-center">
                     <Link href="/signup" className="px-3 py-1 rounded-lg bg-pink-600 font-bold ">
-                        Login
+                        Sign Up
                     </Link>
                 </div>
 
