@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 
 type PasswordInputProps = ComponentProps<typeof Input>
 
-export function PasswordInput({ className, ...props }: PasswordInputProps) {
+export function PasswordInput(props: PasswordInputProps) {
     const [showPassword, setShowPassword] = useState(false);
 
     const togglePasswordVisibility = () => {
@@ -19,8 +19,7 @@ export function PasswordInput({ className, ...props }: PasswordInputProps) {
             <Input
                 {...props}
                 type={showPassword ? "text" : "password"}
-                required
-                className="border-zinc-700 text-white pr-10 transition-colors duration-700 hover:border-[#d7689a] focus-visible:border-[#c81464] focus-visible:ring-pink-500 focus-visible:ring-1 focus-visible:ring-offset-0" />
+                className="border-zinc-700 text-white pr-10 transition-colors duration-500 hover:border-[#d7689a] focus-visible:border-[#c81464] focus-visible:ring-pink-500 focus-visible:ring-1 focus-visible:ring-offset-0" />
 
             <button
                 type="button"

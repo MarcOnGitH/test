@@ -55,7 +55,7 @@ export default function SignupPage() {
                 placeholder="exampleaddress@gmail.com"
                 value={email}
                 required
-                className="border-zinc-700 text-white focus-visible:border-pink-500 hover:border-[#d7689a] focus-visible:ring-pink-500 focus-visible:ring-1 focus-visible:ring-offset-0  transition-colors duration-700 hover:placeholder-pink-300"
+                className="border-zinc-700 text-white focus-visible:border-pink-500 hover:border-[#d7689a] focus-visible:ring-pink-500 focus-visible:ring-1 focus-visible:ring-offset-0  transition-colors duration-500 hover:placeholder-pink-300"
                 onChange={(e) => setEmail(e.target.value)} />
             </div>
 
@@ -66,7 +66,7 @@ export default function SignupPage() {
                   id="username"
                   value={username}
                   required
-                  className="border-zinc-700 text-white  transition-colors duration-700 hover:border-[#d7689a] focus-visible:border-pink-500 focus-visible:ring-pink-500 focus-visible:ring-1 focus-visible:ring-offset-0"
+                  className="border-zinc-700 text-white  transition-colors duration-500 hover:border-[#d7689a] focus-visible:border-pink-500 focus-visible:ring-pink-500 focus-visible:ring-1 focus-visible:ring-offset-0"
                   onChange={(e) => setUsername(e.target.value)} />
               </div>
             </div>

@@ -55,7 +55,7 @@ export default function LoginPage() {
                                     id="username"
                                     value={username}
                                     required
-                                    className="border-zinc-700 text-white transition-colors duration-700 hover:border-[#d7689a] focus-visible:border-pink-500 focus-visible:ring-pink-500 focus-visible:ring-1 focus-visible:ring-offset-0"
+                                    className="border-zinc-700 text-white transition-colors duration-500 hover:border-[#d7689a] focus-visible:border-pink-500 focus-visible:ring-pink-500 focus-visible:ring-1 focus-visible:ring-offset-0"
                                     onChange={(e) => setUsername(e.target.value)}
                                 />
                             </div>
