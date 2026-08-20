@@ -25,13 +25,10 @@ export default function Header() {
                 <Navigation />
 
                 {/* RR */}
-                <div className="flex justify-end">
-                    <button
-                        onClick={() => console.log("log out clicked")}
-                        className="text-xs font-semibold tracking-wider text-red-500 hover:text-red-400 transition-colors"
-                    >
-                        LOGOUT
-                    </button>
+                <div className="flex justify-center">
+                    <Link href="/signup" className="px-3 py-1 rounded-lg bg-pink-600 font-bold ">
+                        Sign Up
+                    </Link>
                 </div>
 
             </div>

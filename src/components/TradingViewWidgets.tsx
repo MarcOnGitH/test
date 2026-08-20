@@ -20,7 +20,7 @@ const TradingViewWidgets = () => {
 
                 <button
                     onClick={() => setIsAdvanced(!isAdvanced)}
-                    className="px-5 py-2 text-sm font-medium text-neutral-400 transition-all duration-250 bg-transparent border border-neutral-600 rounded-md hover:text-[#c81464] hover:border-[#c81464] hover:bg-[#c81464]/10"
+                    className="px-5 py-2 text-sm font-medium text-neutral-400 transition-all duration-250 border border-neutral-600 rounded-md hover:text-[#c81464] hover:border-[#c81464] hover:bg-[#c81464]/10"
                 >
                     {isAdvanced ? "Toggle simple view" : "Toggle advanced view (candles)"}
                 </button>
